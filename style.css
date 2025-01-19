@@ -1,0 +1,84 @@
+body {
+    font-family: 'Arial', sans-serif; /* Fonte mais profissional */
+    line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
+    color: #333; /* Cor de texto mais escura para contraste */
+}
+
+/* Cores e espaçamentos consistentes */
+:root {
+    --primary-color: #007bff; /* Azul padrão do Bootstrap (pode ser alterado) */
+    --secondary-color: #6c757d; /* Cinza secundário */
+    --light-gray: #f8f9fa;
+    --dark-gray: #343a40;
+    --spacing: 2rem; /* Espaçamento padrão entre seções */
+}
+
+/* Estilos gerais */
+h1, h2, h3 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+section {
+    padding: var(--spacing) 0;
+}
+
+.container {
+    max-width: 960px; /* Largura máxima do conteúdo */
+}
+
+/* Navbar */
+.navbar {
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+.nav-link {
+    margin-left: 1rem;
+}
+
+/* Jumbotron */
+.jumbotron {
+    background-color: var(--light-gray);
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.jumbotron h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Cards de Serviços */
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada nos cards */
+    transition: transform 0.2s; /* Transição suave para o efeito de hover */
+    margin-bottom: var(--spacing);
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito de "levantar" ao passar o mouse */
+}
+.card-title{
+    color: var(--primary-color)
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-gray);
+    padding: 1rem 0;
+    color: white;
+    text-align: center;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .jumbotron h1 {
+        font-size: 2.5rem;
+    }
+}
