@@ -1,22 +1,26 @@
+/* Importando uma fonte mais elegante (ex: Montserrat, Playfair Display) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
 body {
-    font-family: 'Arial', sans-serif; /* Fonte mais profissional */
-    line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
-    color: #333; /* Cor de texto mais escura para contraste */
+    font-family: 'Montserrat', sans-serif; /* Fonte principal */
+    line-height: 1.7;
+    color: #555; /* Cinza mais suave para o texto */
+    background-color: #f8f0e3; /* Bege suave para o fundo */
 }
 
-/* Cores e espaçamentos consistentes */
 :root {
-    --primary-color: #007bff; /* Azul padrão do Bootstrap (pode ser alterado) */
-    --secondary-color: #6c757d; /* Cinza secundário */
-    --light-gray: #f8f9fa;
-    --dark-gray: #343a40;
-    --spacing: 2rem; /* Espaçamento padrão entre seções */
+    --primary-color: #d8b4a0; /* Rosa antigo suave */
+    --secondary-color: #a7c5eb; /* Azul bebê suave */
+    --light-color: #fff;
+    --dark-color: #333;
+    --spacing: 3rem;
 }
 
-/* Estilos gerais */
 h1, h2, h3 {
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif; /* Fonte para títulos */
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 1.5rem;
 }
 
 section {
@@ -24,61 +28,107 @@ section {
 }
 
 .container {
-    max-width: 960px; /* Largura máxima do conteúdo */
+    max-width: 1140px; /* Aumentando a largura para telas maiores */
 }
 
 /* Navbar */
 .navbar {
-    padding: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: var(--light-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem 0;
 }
 
 .navbar-brand {
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--dark-color);
 }
 
 .nav-link {
-    margin-left: 1rem;
+    margin-left: 1.5rem;
+    color: var(--dark-color);
+    transition: color 0.3s ease; /* Transição suave na cor */
 }
 
-/* Jumbotron */
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* Jumbotron (Hero Section) */
 .jumbotron {
-    background-color: var(--light-gray);
-    padding: 6rem 0;
+    background-image: url("background_image.jpg"); /* Adicione uma imagem de fundo suave */
+    background-size: cover;
+    background-position: center;
+    color: var(--light-color); /* Texto branco para melhor contraste */
+    text-shadow: 2px 2px 4px #000000;
+    padding: 8rem 0;
     text-align: center;
+    position: relative;
+    overflow: hidden; /* Para garantir que a imagem de fundo cubra todo o jumbotron */
+
+}
+.jumbotron::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Adiciona uma camada escura semi-transparente */
+    z-index: 1; /* Coloca a camada acima da imagem */
+}
+.jumbotron .container{
+    z-index: 2; /* Garante que o conteúdo fique acima da camada escura */
+    position: relative;
 }
 
 .jumbotron h1 {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
+    font-size: 4rem;
+    margin-bottom: 2rem;
 }
 
-/* Cards de Serviços */
+/* Seção Sobre Mim (com foto de perfil) */
+#sobre .profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Faz a imagem ficar redonda */
+    object-fit: cover; /* Mantém a proporção da imagem */
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Cards */
 .card {
     border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada nos cards */
-    transition: transform 0.2s; /* Transição suave para o efeito de hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: var(--spacing);
+    border-radius: 10px; /* Bordas arredondadas */
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Efeito de "levantar" ao passar o mouse */
+    transform: translateY(-8px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
-.card-title{
-    color: var(--primary-color)
+
+.card-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
 /* Footer */
 footer {
-    background-color: var(--dark-gray);
-    padding: 1rem 0;
-    color: white;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 2rem 0;
     text-align: center;
 }
 
-/* Media Queries para Responsividade */
+/* Media Queries */
 @media (max-width: 768px) {
     .jumbotron h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 }
